@@ -1834,15 +1834,14 @@ section {
 
 .btn-cards-pedir{
   color:#fff;
-  padding: 3.5% 7.5%;
+  padding: 1.5% 6.5%;
   font-size: 20px;
   background: #F9B432;
-  border-radius: 50px;
+  border-radius: 20px;
 }
 
 .btn-cards-pedir:hover{
   color:#fff;
-  padding: 3.5% 7.5%;
   font-size: 20px;
   background: #1a1814;
 }
