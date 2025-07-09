@@ -2462,7 +2462,9 @@
             <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" required></textarea>
             <div class="validate"></div>
           </div>
-          <div class="col-lg-3 col-md-6 form-group" id="fileUploadDivLabel" style="display: none;">
+
+          <!-- BTN ADJUNTAR: 
+           <div class="col-lg-3 col-md-6 form-group" id="fileUploadDivLabel" style="display: none;">
             <label id="label-cv" class="label-subir-cv" for="archivo">Adjuntar</label>
           </div>
           <div class="col-lg-3 col-md-6 form-group" id="fileUploadDiv" style="display: none;margin-top: 1%;">
@@ -2470,6 +2472,19 @@
                    style="padding-top: 10px;display: none;">
             <span id="file-name"></span>
             <div class="validate"></div>
+          </div-->
+
+          
+          <!-- Checkbox para adjuntar archivo -->
+          <div class="form-group mt-3" style="display: flex;">
+            <input type="checkbox" id="adjuntarCheckbox" onchange="toggleLinkInput()" />
+            <label for="adjuntarCheckbox" id="checkbox-label" style="margin: auto 15px;">Adjuntar archivo</label>
+          </div>
+
+          <!-- Input para pegar enlace (inicialmente oculto) -->
+          <div class="form-group mt-3" id="linkInputContainer" style="display: none; margin-top: 0px !important;">
+            <input type="url" name="archivo_link" class="form-control" id="archivo_link" placeholder="Pegá acá el enlace público a tu archivo en Google Drive" />
+            <small style="color: #a49b89;">Asegurate de que el archivo sea público: clic derecho &gt; Obtener enlace &gt; Cualquiera con el enlace puede ver</small>
           </div>
 
 
@@ -2485,29 +2500,28 @@
 
         <script>
           function showHideDiv() {
-            var selectElement = document.getElementById('exampleFormControlSelect1');
-            var selectedOption = selectElement.options[selectElement.selectedIndex].value;
-            var fileUploadDiv = document.getElementById('fileUploadDiv');
-            var fileUploadDivLabel = document.getElementById('fileUploadDivLabel');
-            document.getElementById("archivo").value = "";
-            document.getElementById('file-name').textContent = "";
+            const selectElement = document.getElementById('exampleFormControlSelect1');
+            const selectedOption = selectElement.options[selectElement.selectedIndex].value;
+            const label = document.getElementById('checkbox-label');
 
             if (selectedOption === 'Empleo') {
-              fileUploadDiv.style.display = 'block';
-              fileUploadDivLabel.style.display = 'block';
-              document.getElementById('label-cv').textContent = "Adjuntá tu Curriculum";
+              label.textContent = "Adjuntar CV (link de Google Drive)";
+            } else if (selectedOption) {
+              label.textContent = "Adjuntar archivo (link de Google Drive)";
             } else {
-              if(!selectedOption){
-                fileUploadDiv.style.display = 'none';
-                fileUploadDivLabel.style.display = 'none';
-              }else{
-              document.getElementById("archivo").value = "";
-              fileUploadDiv.style.display = 'block';
-              fileUploadDivLabel.style.display = 'block';
-              document.getElementById('label-cv').textContent = "Adjuntar archivo";
-              }
-              
+              label.textContent = "Adjuntar archivo";
             }
+
+            // Resetea el checkbox y oculta el input si se cambia el motivo
+            document.getElementById('adjuntarCheckbox').checked = false;
+            document.getElementById('linkInputContainer').style.display = "none";
+            document.getElementById('archivo_link').value = "";
+          }
+
+          function toggleLinkInput() {
+            const checkbox = document.getElementById('adjuntarCheckbox');
+            const linkInput = document.getElementById('linkInputContainer');
+            linkInput.style.display = checkbox.checked ? "block" : "none";
           }
         </script>
 
