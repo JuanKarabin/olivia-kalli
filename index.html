@@ -2551,18 +2551,20 @@
             <div class="validate"></div>
           </div-->
 
-          
-          <!-- Checkbox para adjuntar archivo -->
-          <div class="form-group mt-3" style="display: flex;">
-            <input type="checkbox" id="adjuntarCheckbox" onchange="toggleLinkInput()" />
-            <label for="adjuntarCheckbox" id="checkbox-label" style="margin: auto 15px;">Adjuntar archivo</label>
+          <div class="form-group mt-3" style="padding-bottom: 20px;">
+            <input 
+              type="url" 
+              class="form-control" 
+              name="LinkArchivo" 
+              id="LinkArchivo" 
+              placeholder="Link al archivo (Google Drive, Dropbox, etc.)" 
+              pattern="https?://.+" 
+              data-msg="Por favor, ingresá un link válido" 
+            >
+            <div class="validate"></div>
           </div>
 
-          <!-- Input para pegar enlace (inicialmente oculto) -->
-          <div class="form-group mt-3" id="linkInputContainer" style="display: none; margin-top: 0px !important;">
-            <input type="text" name="Adjuntar" class="form-control" id="archivo_link" placeholder="Pegá acá el enlace público a tu archivo en Google Drive" />
-            <small style="color: #a49b89;">Asegurate de que el archivo sea público: Compartir &gt; Cualquier usuario que tenga el vínculo &gt; Copiar vínculo</small>
-          </div>
+          
 
 
           <!--<div class="mb-3">
@@ -2576,39 +2578,9 @@
         </form>
 
         <script>
-          function showHideDiv() {
-            const selectElement = document.getElementById('exampleFormControlSelect1');
-            const selectedOption = selectElement.options[selectElement.selectedIndex].value;
-            const label = document.getElementById('checkbox-label');
+        
 
-            if (selectedOption === 'Empleo') {
-              label.textContent = "Adjuntar CV (link de Google Drive)";
-            } else if (selectedOption) {
-              label.textContent = "Adjuntar archivo (link de Google Drive)";
-            } else {
-              label.textContent = "Adjuntar archivo";
-            }
-
-            // Resetea el checkbox y oculta el input si se cambia el motivo
-            /*document.getElementById('adjuntarCheckbox').checked = false;
-            document.getElementById('linkInputContainer').style.display = "none";
-            document.getElementById('archivo_link').value = "";*/
-          }
-
-          function toggleLinkInput() {
-            const checkbox = document.getElementById('adjuntarCheckbox');
-            const inputContainer = document.getElementById('linkInputContainer');
-            const linkInput = document.getElementById('archivo_link');
-
-            if (checkbox.checked) {
-              inputContainer.style.display = "block";
-              linkInput.required = true;
-            } else {
-              inputContainer.style.display = "none";
-              linkInput.required = false;
-              linkInput.value = "";
-            }
-          }
+          
         </script>
 
       </div>
