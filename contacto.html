@@ -181,7 +181,9 @@
             <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" required></textarea>
             <div class="validate"></div>
           </div>
-          <div class="col-lg-3 col-md-6 form-group" id="fileUploadDivLabel" style="display: none;">
+
+
+          <!--div class="col-lg-3 col-md-6 form-group" id="fileUploadDivLabel" style="display: none;">
             <label id="label-cv" class="label-subir-cv" for="archivo">Adjuntar</label>
           </div>
           <div class="col-lg-3 col-md-6 form-group" id="fileUploadDiv" style="display: none;margin-top: 1%;">
@@ -189,6 +191,11 @@
                    style="padding-top: 10px;display: none;">
             <span id="file-name"></span>
             <div class="validate"></div>
+          </div-->
+
+          <div class="form-group mt-3" style="padding-bottom: 20px;"> 
+              <input type="text" class="form-control" name="archivo" id="archivo" placeholder="Adjuntar link público a archivo (Google Drive, Dropbox, etc.)" >
+              <div class="validate"></div>
           </div>
 
 
@@ -202,7 +209,7 @@
 
         </form>
 
-        <script>
+        <!--script>
           function showHideDiv() {
             var selectElement = document.getElementById('exampleFormControlSelect1');
             var selectedOption = selectElement.options[selectElement.selectedIndex].value;
@@ -228,7 +235,7 @@
               
             }
           }
-        </script>
+        </script-->
 
       </div>
     </section><!-- End Book A Table Section -->
