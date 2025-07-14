@@ -2559,8 +2559,8 @@
           </div>
 
           <!-- Input para pegar enlace (inicialmente oculto) -->
-          <div class="form-group mt-3" id="linkInputContainer" style="margin-top: 0px !important;">
-            <input type="url" name="Adjuntar" class="form-control" id="archivo_link" placeholder="Pegá acá el enlace público a tu archivo en Google Drive" />
+          <div class="form-group mt-3" id="linkInputContainer" style="display: none; margin-top: 0px !important;">
+            <input type="text" name="Adjuntar" class="form-control" id="archivo_link" placeholder="Pegá acá el enlace público a tu archivo en Google Drive" />
             <small style="color: #a49b89;">Asegurate de que el archivo sea público: Compartir &gt; Cualquier usuario que tenga el vínculo &gt; Copiar vínculo</small>
           </div>
 
@@ -2590,9 +2590,9 @@
             }
 
             // Resetea el checkbox y oculta el input si se cambia el motivo
-            document.getElementById('adjuntarCheckbox').checked = false;
+            /*document.getElementById('adjuntarCheckbox').checked = false;
             document.getElementById('linkInputContainer').style.display = "none";
-            document.getElementById('archivo_link').value = "";
+            document.getElementById('archivo_link').value = "";*/
           }
 
           function toggleLinkInput() {
