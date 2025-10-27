@@ -529,7 +529,7 @@ h6 {
   text-transform: uppercase;
   display: inline-block;
   padding: 12px 30px;
-  border-radius: 50px;
+  border-radius: 10px;
   transition: 0.3s;
   line-height: 1;
   color: white;
@@ -662,7 +662,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 160px 0;
+  padding: 100px 0;
   overflow: hidden;
 }
 
@@ -1274,7 +1274,7 @@ section {
   padding: 10px 35px;
   color: #fff;
   transition: 0.4s;
-  border-radius: 50px;
+  border-radius: 10px;
 }
 
 .book-a-table .php-email-form button[type=submit]:hover {
@@ -1628,7 +1628,7 @@ section {
   background: #0c0b09;
   border-top: 1px solid #37332a;
   border-bottom: 1px solid #28251f;
-  padding: 60px 0 30px 0;
+  padding: 60px 0 0 0;
 }
 
 #footer .footer-top .footer-info {
@@ -1828,22 +1828,22 @@ section {
 }
 
 .cards-para-pedir:hover{
-  background: rgba(249, 180, 50, 0.38);
+  background: #35312998;
   color:#1A1814;
 }
 
 .btn-cards-pedir{
   color:#fff;
-  padding: 1.5% 6.5%;
+  padding: 2.5% 4.5%;
   font-size: 20px;
   background: #F9B432;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .btn-cards-pedir:hover{
   color:#fff;
   font-size: 20px;
-  background: #1a1814;
+  background: #f9b3329f;
 }
 
 .titulos-comida{
