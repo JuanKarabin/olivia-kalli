@@ -283,6 +283,50 @@
       document.getElementById('file-name').textContent = fileName;
     });
   }catch(e){}
-  
+
+  /**
+   * Renderiza el accordion de sucursales desde SUCURSALES_OLIVIA
+   */
+  const renderSucursales = () => {
+    const container = select('#accordionFlushExample');
+    if (!container || typeof SUCURSALES_OLIVIA === 'undefined') return;
+
+    container.innerHTML = SUCURSALES_OLIVIA.map((s, i) => {
+      const id = `sucursal-${i}`;
+      const isProximamente = s.proximamente === true;
+      const bodyContent = isProximamente
+        ? '<p class="fst-italic text-muted">Próximamente</p>'
+        : `
+          <div class="row">
+            <div class="col-lg-12 details order-2 order-lg-1">
+              <h3>${s.direccion}</h3>
+              <p class="fst-italic">Tel: ${s.telefono}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 text-center order-1 order-lg-2" style="min-height: 30rem;">
+              <iframe src="${s.mapa}" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="0"></iframe>
+            </div>
+          </div>
+        `;
+      const borderClass = i === SUCURSALES_OLIVIA.length - 1 ? ' style="border-bottom: 1px solid #F9B432;"' : '';
+      return `
+        <div class="accordion-item"${borderClass}>
+          <p class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${id}" aria-expanded="false" aria-controls="${id}">
+              ${s.ciudad}${isProximamente ? ' (Próximamente)' : ''}
+            </button>
+          </p>
+          <div id="${id}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">${bodyContent}</div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    if (typeof AOS !== 'undefined') AOS.refresh();
+  };
+
+  window.addEventListener('load', renderSucursales);
 
 })()
