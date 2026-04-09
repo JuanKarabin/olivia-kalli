@@ -291,6 +291,10 @@
     const container = select('#accordionFlushExample');
     if (!container || typeof SUCURSALES_OLIVIA === 'undefined') return;
 
+    /* Evita que traductores del navegador alteren nombres de localidades, calles y teléfonos */
+    container.setAttribute('translate', 'no');
+    container.classList.add('notranslate');
+
     container.innerHTML = SUCURSALES_OLIVIA.map((s, i) => {
       const id = `sucursal-${i}`;
       const isProximamente = s.proximamente === true;
