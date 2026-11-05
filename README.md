@@ -63,6 +63,8 @@ olivia-kalli/
 ├── index.html          # Página principal
 ├── inner-page.html     # Página de confirmación
 ├── contacto.html       # Página de contacto
+├── menu/
+│   └── index.html      # Redirige /menu a la sección del menú en la página principal
 ├── assets/
 │   ├── css/            # Estilos
 │   ├── js/             # main.js, sucursales.js
