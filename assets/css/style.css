@@ -471,7 +471,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/banner_web_1.jpg") top center;/*url("../img/hero-bg.jpg") top center;*/
+  background: url("../img/banner_web_1.webp") top center;/*url("../img/hero-bg.jpg") top center;*/
   background-size: cover;
   position: relative;
   padding: 0;
@@ -770,14 +770,14 @@ section {
 # About
 --------------------------------------------------------------*/
 .about {
-  background: url("../img/fondo.jpg.jpeg") center center;
+  background: url("../img/fondo.webp") center center;
   background-size: cover;
   position: relative;
   padding: 80px 0;
 }
 
 .about2 {
-  background: url("../img/pizza-ruedita.png") center center;
+  background: url("../img/pizza-ruedita.webp") center center;
   background-size: cover;
   position: relative;
   padding: 80px 0;
@@ -1086,7 +1086,7 @@ section {
 # Events
 --------------------------------------------------------------*/
 .events {
-  background: url(../img/fondo.jpg.jpeg) center center no-repeat;
+  background: url(../img/fondo.webp) center center no-repeat;
   background-size: cover;
   position: relative;
 }
@@ -1805,7 +1805,7 @@ section {
   display: inline-block;
   width: 120px; /* Ajusta el ancho según sea necesario */
   height: 120px; /* Ajusta la altura según sea necesario */
-  background: url("../img/olivia_logo.png") no-repeat center top;
+  background: url("../img/olivia_logo.webp") no-repeat center top;
   background-size: cover; /* Asegura que la imagen cubra todo el botón */
   text-indent: -9999px; /* Oculta el texto del botón */
   margin: -40% 0;
