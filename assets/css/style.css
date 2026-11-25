@@ -1870,3 +1870,117 @@ section {
   cursor: pointer;
   background: #f9b33283;
 }
+
+#footer .copyright,
+#footer .credits {
+  color: #b5b5b5;
+}
+
+#footer .credits a {
+  color: #F9B432;
+}
+
+#footer .credits a:hover {
+  color: #fff;
+}
+
+/* Mensajes del formulario de contacto */
+.form-feedback[hidden] {
+  display: none !important;
+}
+
+.form-feedback {
+  margin: 10px 0 20px;
+  padding: 24px 20px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.form-ok {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #F9B432;
+  background: rgba(249, 180, 50, 0.08);
+  color: #fff;
+}
+
+.form-ok i {
+  font-size: 40px;
+  color: #F9B432;
+  line-height: 1;
+}
+
+.form-ok strong {
+  font-size: 18px;
+}
+
+.form-error {
+  background: #ed3c0d;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Página de gracias (inner-page.html) */
+.gracias {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 140px 20px 80px;
+  background: #0c0b09;
+}
+
+.gracias-card {
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  padding: 48px 32px;
+  border: 1px solid #F9B432;
+  border-radius: 12px;
+  background: #181818;
+  color: #fff;
+}
+
+.gracias-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #F9B432;
+  color: #0c0b09;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.gracias-card h1 {
+  color: #F9B432;
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.gracias-lead {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.gracias-card .btn-volver-inicio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 12px 28px;
+  border-radius: 50px;
+  background: #F9B432;
+  color: #0c0b09;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.gracias-card .btn-volver-inicio:hover {
+  background: #fff;
+  color: #0c0b09;
+}

@@ -321,4 +321,36 @@
 
   window.addEventListener('load', renderSucursales);
 
+  /**
+   * Formulario de contacto: envío a Netlify Forms sin salir de la página.
+   * Si falla el fetch, se hace el envío normal (redirige a inner-page.html).
+   */
+  document.querySelectorAll('form[name="formulario"]').forEach(form => {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const ok = form.querySelector('.form-ok');
+      const err = form.querySelector('.form-error');
+      const btn = form.querySelector('button[type="submit"]');
+      const data = new FormData(form);
+      data.set('form-name', form.getAttribute('name'));
+      btn.disabled = true;
+      btn.textContent = 'ENVIANDO...';
+      err.hidden = true;
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString()
+      }).then(res => {
+        if (!res.ok) throw new Error(res.status);
+        form.querySelectorAll('.row, .form-group, .text-center').forEach(el => el.hidden = true);
+        ok.hidden = false;
+        ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }).catch(() => {
+        btn.disabled = false;
+        btn.textContent = 'ENVIAR';
+        err.hidden = false;
+      });
+    });
+  });
+
 })()
