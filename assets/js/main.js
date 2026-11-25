@@ -204,12 +204,6 @@
 
   });
 
-  /**
-   * Initiate glightbox 
-   */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
 
   /**
    * Events slider
@@ -258,12 +252,6 @@
     }
   });
 
-  /**
-   * Initiate gallery lightbox 
-   */
-  const galleryLightbox = GLightbox({
-    selector: '.gallery-lightbox'
-  });
 
   /**
    * Animation on scroll
